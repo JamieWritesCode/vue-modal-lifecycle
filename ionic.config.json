@@ -1,0 +1,7 @@
+{
+  "name": "modal-lifecycle",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
