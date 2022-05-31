@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts">
-import { IonContent, IonPage } from "@ionic/vue";
-import { defineComponent } from "vue";
+import { IonContent, IonPage, onIonViewDidEnter, onIonViewDidLeave, onIonViewWillEnter, onIonViewWillLeave } from "@ionic/vue";
+import { defineComponent, onMounted, onUnmounted } from "vue";
 
 export default defineComponent({
   name: "ModalPage",
@@ -16,10 +16,16 @@ export default defineComponent({
     IonContent,
     IonPage,
   },
-  ionViewDidEnter() {
-    console.log("This lifecycle hook should also work, but doesn't");
-  },
+  setup(props) {
+    onMounted(() => {
+      console.log("modal mounted")
+    });
+    onUnmounted(() => {
+      console.log("modal unmounted")
+    });
+  }
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>
